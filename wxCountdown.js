@@ -1,3 +1,6 @@
+function addzero(num){
+  return num>9?num:'0'+num;
+}
 class Countdown {
   static init(endTime,countdownId,that) {
     let end = new Date(endTime).getTime()
@@ -7,8 +10,8 @@ class Countdown {
         countdown: parseInt((end - new Date().getTime())/1000),
         day: parseInt((end - new Date().getTime())/1000/60/60/24),
         hour: parseInt((end - new Date().getTime())/1000/60/60%24),
-        minute: parseInt((end - new Date().getTime())/1000/60%60),
-        seconds: parseInt((end - new Date().getTime())/1000)%60
+        minute: addzero(parseInt((end - new Date().getTime())/1000/60%60)),
+        seconds: addzero(parseInt((end - new Date().getTime())/1000)%60)
       }
     })
 
@@ -18,8 +21,8 @@ class Countdown {
           countdown: parseInt((end - new Date().getTime())/1000),
           day: parseInt((end - new Date().getTime())/1000/60/60/24),
           hour: parseInt((end - new Date().getTime())/1000/60/60%24),
-          minute: parseInt((end - new Date().getTime())/1000/60%60),
-          seconds: parseInt((end - new Date().getTime())/1000)%60
+          minute:addzero(parseInt((end - new Date().getTime())/1000/60%60)),
+          seconds: addzero(parseInt((end - new Date().getTime())/1000)%60)
         }
       })
 
